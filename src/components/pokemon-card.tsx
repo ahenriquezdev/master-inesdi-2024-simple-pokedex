@@ -1,6 +1,6 @@
 import type { Pokemon } from "models";
 
-import "./pokemon-card.css";
+import "../assets/css/pokemon-card.css";
 
 type Props = {
   pokemon: Pokemon;

@@ -1,7 +1,7 @@
 import c from "classnames";
 import { useTheme } from "contexts/use-theme";
 
-import "./led-display.css";
+import "../assets/css/led-display.css";
 
 type Props = {
   color: "blue" | "red" | "yellow";

@@ -31,11 +31,27 @@ export type Pokemon = {
   id: number;
   name: string;
   stats: PokemonStat[];
-  types: PokemonType[];
+  types: { type: { name: string } }[];
+  weaknesses?: string[];
   weight: number;
   height: number;
   abilities: PokemonAbility[];
   sprites: {
     front_default: string;
   };
+};
+
+export type PokemonDetail = {
+  types: PokemonType[];
+};
+
+export type DamageRelations = {
+  double_damage_from: {
+    name: string;
+    url: string;
+  }[];
+};
+
+export type UsePokemonOpts = {
+  limit?: number;
 };

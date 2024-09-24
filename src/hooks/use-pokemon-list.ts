@@ -1,12 +1,8 @@
 import { useEffect, useState } from "react";
 
-import type { PokemonUri } from "models";
+import type { PokemonUri, UsePokemonOpts } from "models";
 
 const API_ENDPOINT = "https://pokeapi.co/api/v2/pokemon/";
-
-type UsePokemonOpts = {
-  limit?: number;
-};
 
 export function usePokemonList({ limit }: UsePokemonOpts = { limit: 42 }) {
   const [isLoading, setIsLoading] = useState(true);
