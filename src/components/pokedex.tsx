@@ -28,6 +28,8 @@ export function Pokedex() {
   const addToTeam = (pokemon: Pokemon | undefined) => {
     if (pokemon && team.length < 6 && !team.some((p) => p.name === pokemon.name)) {
       setTeam([...team, pokemon]);
+    } else {
+      alert("Alto vaquero! Haz llegado al maximo de integrantes para tu equipo.")
     }
   };
 
