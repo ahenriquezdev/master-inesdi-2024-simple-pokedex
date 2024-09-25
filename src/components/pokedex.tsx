@@ -26,11 +26,19 @@ export function Pokedex() {
   const [team, setTeam] = useState<Pokemon[]>([]); // State for the team
 
   const addToTeam = (pokemon: Pokemon | undefined) => {
-    if (pokemon && team.length < 6 && !team.some((p) => p.name === pokemon.name)) {
-      setTeam([...team, pokemon]);
-    } else {
-      alert("Alto vaquero! Haz llegado al maximo de integrantes para tu equipo.")
+    if (!pokemon) return;
+
+    // fix de validacion
+    const isAlreadyInTeam = team.some((p) => p.name === pokemon.name);
+    if (isAlreadyInTeam) {
+      alert("Este pokemon ya se encuentra en tu equipo.");
+      return;
     }
+    if (team.length >= 6) {
+      alert("Tu equipo ya posee 6 pokemons.");
+      return;
+    }
+    setTeam([...team, pokemon]);
   };
 
   const removeFromTeam = (pokemonToRemove: Pokemon) => {
